@@ -210,4 +210,4 @@ function randomizeNow() {
   // Update grid and angles
   updateTargetAngles();
   lastUpdateTime = millis();
-} 
+}
