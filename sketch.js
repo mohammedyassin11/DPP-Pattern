@@ -75,10 +75,10 @@ function setup() {
   bgColorSelector.option('Bright Cyan');
   bgColorSelector.changed(() => {
     const val = bgColorSelector.value();
-    if (val.includes('Yellow')) bgColor = '#F7ECE2';
-    else if (val.includes('Blue')) bgColor = '#D0EBFF';
-    else if (val.includes('112C31')) bgColor = '#112C31';
-    else if (val.includes('0BB7DF')) bgColor = '#0BB7DF';
+    if (val === 'Yellow') bgColor = '#F7ECE2';
+    else if (val === 'Blue') bgColor = '#D0EBFF';
+    else if (val === 'Dark Teal') bgColor = '#112C31';
+    else if (val === 'Bright Cyan') bgColor = '#0BB7DF';
   });
   bgColorSelector.parent(uiContainer);
 
@@ -203,11 +203,11 @@ function randomizeNow() {
   const bgOptions = ['Yellow', 'Blue', 'Dark Teal', 'Bright Cyan'];
   const randomBG = random(bgOptions);
   bgColorSelector.value(randomBG);
-  bgColor = (randomBG.includes('Yellow')) ? '#F7ECE2' :
-            (randomBG.includes('Blue')) ? '#D0EBFF' :
-            (randomBG.includes('112C31')) ? '#112C31' : '#0BB7DF';
+  bgColor = (randomBG === 'Yellow') ? '#F7ECE2' :
+            (randomBG === 'Blue') ? '#D0EBFF' :
+            (randomBG === 'Dark Teal') ? '#112C31' : '#0BB7DF';
 
   // Update grid and angles
   updateTargetAngles();
   lastUpdateTime = millis();
-}
+} 
